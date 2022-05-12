@@ -3,10 +3,9 @@ import connection from '../utils/database.js';
 const createUser = async (req, res) => {
   const { user } = req.body;
 
-  const a = 'asdkhashdbasd';
-
   try {
-    const newUser = await connection('public.usuario').insert({ ...user });
+    const newUser = await connection('usuarios').insert(user).returning('*');
+    // const newUser = await connection.table('film').insert(user);
     return res.json({
       msg: 'Usuario registrado correctamente 😂',
       user: newUser,
