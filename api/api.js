@@ -1,9 +1,12 @@
 import express from 'express';
+import userRoutes from './routes/userRoutes.js';
 
 const api = express();
 
 //Configurar middlewares generales
 api.use(express.json());
+
+api.use(userRoutes);
 
 api.use((err, req, res, next) => {
   if (err instanceof SyntaxError) {

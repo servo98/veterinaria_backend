@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "API de una veterinaria",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon server.js"
   },
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/servo98/veterinaria_backend#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "joi": "^17.6.0",
