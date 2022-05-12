@@ -1,0 +1,27 @@
+{
+  "name": "veterinaria_backend",
+  "version": "1.0.0",
+  "description": "API de una veterinaria",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/servo98/veterinaria_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/servo98/veterinaria_backend/issues"
+  },
+  "homepage": "https://github.com/servo98/veterinaria_backend#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "knex": "^2.0.0",
+    "pg": "^8.7.3"
+  }
+}
