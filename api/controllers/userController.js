@@ -48,7 +48,7 @@ const login = async (req, res) => {
     console.log(user);
 
     const expDate = new Date();
-    expDate.setMinutes(expDate.getMinutes() + 5);
+    expDate.setMinutes(expDate.getMinutes() + 1);
 
     const token = jwt.encode(
       {
