@@ -10,6 +10,10 @@ api.use(express.json());
 api.use(userRoutes);
 api.use(ownerRoutes);
 
+api.get('/status', (req, res) => {
+  res.send('API en linea y funcionando');
+});
+
 api.use((err, req, res, next) => {
   if (err instanceof SyntaxError) {
     return res.status(400).json({
