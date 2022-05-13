@@ -11,8 +11,6 @@ const connection = {
   database: process.env.DB_NAME,
 };
 
-console.log('aca', connection);
-
 export default knex({
   client: 'pg',
   connection,

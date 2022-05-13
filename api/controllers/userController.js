@@ -1,5 +1,6 @@
 import connection from '../utils/database.js';
 import bcryp from 'bcrypt';
+import jwt from 'jwt-simple';
 
 const createUser = async (req, res) => {
   const { user } = req.body;
@@ -45,9 +46,21 @@ const login = async (req, res) => {
 
     delete user.password;
     console.log(user);
+
+    const expDate = new Date();
+    expDate.setMinutes(expDate.getMinutes() + 5);
+
+    const token = jwt.encode(
+      {
+        user,
+        expDate,
+      },
+      process.env.JWT_SECRET
+    );
+
     return res.json({
       msg: 'Usuario encontrado',
-      user,
+      token,
     });
   } catch (err) {
     return res.status(404).json({

@@ -1,5 +1,6 @@
 import express from 'express';
 import userRoutes from './routes/userRoutes.js';
+import ownerRoutes from './routes/ownerRoutes.js';
 
 const api = express();
 
@@ -7,6 +8,7 @@ const api = express();
 api.use(express.json());
 
 api.use(userRoutes);
+api.use(ownerRoutes);
 
 api.use((err, req, res, next) => {
   if (err instanceof SyntaxError) {
