@@ -9,7 +9,10 @@ const connection = {
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
+  databaseUrl: process.env.DATABASE_URL,
 };
+
+console.log(connection);
 
 export default knex({
   client: 'pg',
